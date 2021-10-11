@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Dropdown - Category</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 10px;
+        }
+        #kategoriContainer{
+            width: 600px;
+            border: 1px solid grey;
+            margin: 0 auto;
+        }
+        .kategoriItem{
+            
+        }
+        .kategoriItem .kategoriBaslik{
+            font-size: 3.2rem;
+            border-bottom:1px solid white;
+            margin-bottom:1rem;
+            width: 100%;
+            padding:1rem 3rem;
+            background-color: black;
+            color:white;
+            transition: all 0.5s ease;
+        }
+        .kategoriItem .kategoriBaslik:hover{
+            background-color: white;
+            color:black;
+            cursor: pointer;
+            border:1px solid lightgrey;
+        }
+        .kategoriItem ul{
+            list-style: none;
+            display: none;
+        }
+        .kategoriItem ul li{
+            font-size: 2.4rem;
+            margin-bottom:1rem;
+            padding:1rem;
+        }
+        .clicked{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!--KategoriBox-->
+    <section id="kategoriContainer">
+        <div class="kategoriItem">
+            <h2 class="kategoriBaslik"><i class="fas fa-car"></i> BMW</h2>
+                <ul>
+                    <li>E39 (1995 - 2004)</li>
+                    <li>E46 (1997 - 2006)</li>
+                    <li>E60 (2003 - 2010)</li>
+                    <li>F10 (2009 - 2017)</li>
+                </ul>
+        </div>
+        <div class="kategoriItem">
+            <h2 class="kategoriBaslik"><i class="fas fa-car"></i> VOLSWAGEN</h2>
+                <ul>
+                    <li>GOLF 5 (2004 - 2009)</li>
+                    <li>GOLF 6 (2010 - 2014)</li>
+                    <li>GOLF 7 (2013 - 2020)</li>
+                </ul>
+        </div>
+    </section>
+    <script>
+
+    let kategoriItem = document.getElementsByClassName("kategoriItem");
+    $(kategoriItem).click(function (){
+        $(this).find("ul").slideToggle();
+    });
+    </script>
+</body>
+</html>
